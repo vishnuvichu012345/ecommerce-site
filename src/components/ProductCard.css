@@ -1,0 +1,19 @@
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+  }
+  
+  .product-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .product-card {
+      margin: 1rem 0;
+    }
+  }
+  
