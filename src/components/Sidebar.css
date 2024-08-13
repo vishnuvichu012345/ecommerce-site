@@ -1,22 +1,25 @@
-/* Sidebar.css */
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .sidebar {
-  display: none; /* Hidden by default */
   position: fixed;
   top: 0;
   left: 0;
   width: 250px; /* Adjust width as needed */
   height: 100%;
   background-color: #FFFFFF;
-  padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: 'Montserrat', sans-serif;
   z-index: 1000; /* Ensure sidebar is above other content */
   transition: transform 0.3s ease-in-out;
   transform: translateX(-100%); /* Start off-screen */
+  flex-direction: column;
+  align-items: flex-start; /* Align items at the start */
+  padding: 20px;
 }
 
+
 .sidebar.open {
-  display: block; /* Show sidebar when open */
   transform: translateX(0); /* Slide in when open */
 }
 
@@ -28,6 +31,148 @@
   position: absolute;
   top: 15px;
   right: 15px;
+  color: black; /* Ensure the close button matches the navbar's color scheme */
 }
 
-/* Add more styling as needed */
+.sidebar-brand {
+  font-size: 28px; /* Match the navbar brand font size */
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase; /* Match the navbar's uppercase text */
+  margin-bottom: 20px;
+  text-align: left; /* Left align brand */
+}
+
+.sidebar-brand i {
+  margin-right: 12px; /* Increase space between icon and text */
+  font-size: 32px; /* Increase font size for icon */
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  align-items: flex-start; /* Align links to the start */
+  width: 100%; /* Make links take full width */
+}
+
+.sidebar-links a, .dropdown, .cart-link {
+  width: 100%;
+}
+
+.sidebar-links a {
+  color: black;
+  text-decoration: none;
+  padding: 12px 20px; /* Increase padding for larger clickable area */
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Match the navbar's uppercase text */
+  font-weight: 700; /* Match the navbar's bold text */
+  font-size: 18px; /* Match the navbar's font size */
+  text-align: left; /* Left align links */
+  margin-bottom: 10px; /* Space between links */
+}
+
+.sidebar-links a i {
+  margin-right: 10px; /* Increase space between icon and text */
+  font-size: 22px; /* Increase font size for icon */
+}
+
+.sidebar-links a:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.dropbtn {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 12px 20px; /* Increase padding for dropdown button */
+  font-size: 18px; /* Match the navbar's font size */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Match the navbar's uppercase text */
+  font-weight: 700; /* Match the navbar's bold text */
+  text-align: left; /* Left align dropdown button */
+  width: 100%; /* Make dropdown button take full width */
+}
+
+.dropbtn i {
+  margin-right: 10px; /* Increase space between icon and text */
+  font-size: 22px; /* Increase font size for icon */
+}
+
+.dropbtn:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  min-width: 200px; /* Increase width for dropdown content */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Ensure dropdown is above other content */
+  border-radius: 4px;
+  top: 100%; /* Position below the dropdown button */
+  left: 0; /* Align with the dropdown button */
+}
+
+.dropdown-content button {
+  background-color: #FFFFFF;
+  color: black;
+  width: 100%;
+  text-align: left; /* Left align dropdown items */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Match the navbar's uppercase text */
+  font-weight: 700; /* Match the navbar's bold text */
+  font-size: 16px; /* Match the navbar's font size */
+}
+
+.dropdown-content button i {
+  margin-right: 10px; /* Increase space between icon and text */
+  font-size: 20px; /* Increase font size for icon */
+}
+
+.dropdown-content button:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f0f0f0;
+}
+
+.cart-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align cart link to the start */
+  width: 100%;
+}
+
+.cart-link i {
+  font-size: 24px; /* Adjust the cart icon size */
+  color: black;
+}
+
+.cart-count {
+  background-color: #ff0000;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px; /* Adjust padding for a better look */
+  font-size: 12px;
+  position: absolute;
+  top: -5px; /* Adjust to position the count above the icon */
+  right: 100px; /* Adjust to position the count inside the cart icon */
+}

@@ -31,8 +31,7 @@
 .navbar-links a {
   color: black;
   text-decoration: none;
-  margin: 0 20px; /* Increase margin between links */
-  padding: 10px 20px; /* Increase padding for larger clickable area */
+  padding: 10px 10px; /* Increase padding for larger clickable area */
   transition: background-color 0.3s, color 0.3s;
   text-transform: uppercase; /* Make text uppercase */
   font-weight: 700; /* Make text bold */

@@ -25,40 +25,38 @@ const Sidebar = ({ onCategoryChange, cartItemCount, isOpen, toggleSidebar }) => 
       </div>
       <div className="sidebar-links">
         <Link to='/'>
-          <a>
+          <div>
             <i className="fas fa-home"></i> Home
-          </a>
-        </Link>
-        <Link to='/sort'>
-          <div className="dropdown">
-            <button className="dropbtn" onClick={toggleDropdown}>
-              <i className="fas fa-list"></i> Categories
-            </button>
-            {isDropdownOpen && (
-              <div className="dropdown-content">
-                <button onClick={() => handleCategoryChange("men's clothing")}>
-                  <i className="fas fa-male"></i> Men's
-                </button>
-                <button onClick={() => handleCategoryChange("women's clothing")}>
-                  <i className="fas fa-female"></i> Women's
-                </button>
-                <button onClick={() => handleCategoryChange('jewelery')}>
-                  <i className="fas fa-gem"></i> Jewelery
-                </button>
-                <button onClick={() => handleCategoryChange('electronics')}>
-                  <i className="fas fa-tv"></i> Electronics
-                </button>
-              </div>
-            )}
           </div>
         </Link>
+        <div className="dropdown">
+          <button className="dropbtn" onClick={toggleDropdown}>
+            <i className="fas fa-list"></i> Categories
+          </button>
+          {isDropdownOpen && (
+            <div className="dropdown-content">
+              <button onClick={() => handleCategoryChange("men's clothing")}>
+                <i className="fas fa-male"></i> Men's
+              </button>
+              <button onClick={() => handleCategoryChange("women's clothing")}>
+                <i className="fas fa-female"></i> Women's
+              </button>
+              <button onClick={() => handleCategoryChange('jewelery')}>
+                <i className="fas fa-gem"></i> Jewelery
+              </button>
+              <button onClick={() => handleCategoryChange('electronics')}>
+                <i className="fas fa-tv"></i> Electronics
+              </button>
+            </div>
+          )}
+        </div>
         <Link to='/cart'>
-          <a className="cart-link">
+          <div className="cart-link">
             <i className="fas fa-shopping-cart"></i> Cart
             {cartItemCount > 0 && (
               <span className="cart-count">{cartItemCount}</span>
             )}
-          </a>
+          </div>
         </Link>
       </div>
     </div>
