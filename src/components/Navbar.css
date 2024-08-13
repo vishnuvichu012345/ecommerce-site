@@ -1,67 +1,120 @@
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px;
-  }
-  
-  .navbar-brand {
-    color: white;
-    font-size: 24px;
-  }
-  
-  .navbar-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    padding: 8px;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .dropbtn {
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    margin-left: 20px;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropbtn {
-    background-color: #555;
-  }
-  
+  background-color: #FFFFFF;
+  padding: 15px 30px; /* Increase padding for a larger navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+}
+
+.navbar-brand {
+  font-size: 28px; /* Increase font size for brand */
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase; /* Make text uppercase */
+}
+
+.navbar-brand i {
+  margin-right: 12px; /* Increase space between icon and text */
+  font-size: 32px; /* Increase font size for icon */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links a {
+  color: black;
+  text-decoration: none;
+  margin: 0 20px; /* Increase margin between links */
+  padding: 10px 20px; /* Increase padding for larger clickable area */
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Make text uppercase */
+  font-weight: 700; /* Make text bold */
+  font-size: 18px; /* Increase font size for links */
+}
+
+.navbar-links a i {
+  margin-right: 10px; /* Increase space between icon and text */
+  font-size: 22px; /* Increase font size for icon */
+}
+
+.navbar-links a:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 10px 20px; /* Increase padding for dropdown button */
+  font-size: 18px; /* Increase font size for dropdown button */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Make text uppercase */
+  font-weight: 700; /* Make text bold */
+}
+
+.dropbtn i {
+  margin-right: 10px; /* Increase space between icon and text */
+  font-size: 22px; /* Increase font size for icon */
+}
+
+.dropbtn:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #FFFFFF;
+  min-width: 200px; /* Increase width for dropdown content */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999; /* Ensure dropdown is above other content */
+  border-radius: 4px;
+  top: 100%; /* Position below the dropdown button */
+  left: 0; /* Align with the dropdown button */
+}
+
+.dropdown-content button {
+  background-color: #FFFFFF;
+  color: black;
+  padding: 12px 20px; /* Increase padding for dropdown items */
+  width: 100%;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase; /* Make text uppercase */
+  font-weight: 700; /* Make text bold */
+  font-size: 16px; /* Increase font size for dropdown items */
+}
+
+.dropdown-content button i {
+  margin-right: 10px; /* Increase space between icon and text */
+  font-size: 20px; /* Increase font size for icon */
+}
+
+.dropdown-content button:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f0f0f0;
+}

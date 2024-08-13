@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import ProductList from './components/ProductList';
 import AddToCart from './components/AddToCart';
 import './App.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 class App extends React.Component {
   state = {
