@@ -1,3 +1,4 @@
+// cartReducer.js
 import { ADD_TO_CART, REMOVE_FROM_CART, UPDATE_QUANTITY } from '../actions/cartActions';
 
 const initialState = {
@@ -5,15 +6,15 @@ const initialState = {
 };
 
 const cartReducer = (state = initialState, action) => {
-
   console.log('cartReducer state:', state);
-  console.log('cartReducer action:', action.type);
+  console.log('cartReducer action:', action);
+
   switch (action.type) {
     case ADD_TO_CART:
       console.log('Adding product to cart:', action.payload);
       return {
         ...state,
-        cart: [...state.cart, { ...action.payload, quantity: 1 }], // Add product with quantity 1
+        cart: [...state.cart, { ...action.payload, quantity: 1 }], // Add the product with a default quantity of 1
       };
     case REMOVE_FROM_CART:
       return {
