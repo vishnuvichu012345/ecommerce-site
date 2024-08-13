@@ -1,12 +1,51 @@
+/* General container styling */
+.product-list-container {
+  padding: 16px;
+  text-align: center; /* Center the title and any messages */
+}
+
+/* Title styling */
+.product-list-title {
+  font-size: 24px; /* Default font size for larger screens */
+  font-weight: bold;
+  color: #3C3D37; /* Color matching button background */
+  margin-bottom: 16px; /* Space below the title */
+}
+
+/* Message when no products are available */
+.no-products-message {
+  font-size: 16px;
+  color: #777; /* Grey color for no products message */
+  margin-top: 16px; /* Space above the message */
+}
+
+/* Product list styling */
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Space between cards */
+  justify-content: center; /* Center the cards horizontally */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .product-list-title {
+    font-size: 20px; /* Smaller font size for title on smaller screens */
   }
-  
-  @media (max-width: 768px) {
-    .product-list {
-      flex-direction: column;
-    }
+
+  .product-list {
+    gap: 8px; /* Reduced gap between cards on smaller screens */
   }
-  
+}
+
+@media (max-width: 480px) {
+  .product-list-title {
+    font-size: 18px; /* Even smaller font size for title on very small screens */
+  }
+
+  .product-list {
+    flex-direction: column; /* Stack cards vertically on very small screens */
+    align-items: center; /* Center cards horizontally */
+    gap: 12px; /* Slightly increased gap for better spacing on small screens */
+  }
+}

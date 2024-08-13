@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchProducts } from '../redux/actions/productActions';
 import ProductCard from './ProductCard';
+import Banner from './Banner';
 import './ProductList.css';
 
 class ProductList extends React.Component {
@@ -19,11 +20,26 @@ class ProductList extends React.Component {
       ? products.filter(product => product.category === selectedCategory)
       : products;
 
+    // Determine if the products are filtered or not
+    const isFiltered = selectedCategory && filteredProducts.length > 0;
+
     return (
-      <div className="product-list">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div>
+        <Banner />
+        <div className="product-list-container">
+          <h2 className="product-list-title">
+            {isFiltered ? `Products in ${selectedCategory}` : 'Our Products'}
+          </h2>
+          {filteredProducts.length === 0 && selectedCategory ? (
+            <p className="no-products-message">No products found in this category.</p>
+          ) : (
+            <div className="product-list">
+              {filteredProducts.map(product => (
+                <ProductCard key={product.id} product={product} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     );
   }
