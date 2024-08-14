@@ -65,6 +65,7 @@ const Navbar = ({ onCategoryChange, cartItemCount, toggleSidebar }) => {
   );
 };
 
+
 // Map state from Redux store to component props
 const mapStateToProps = (state) => {
   const cart = state.cart ? state.cart.cart : [];

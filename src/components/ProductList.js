@@ -28,7 +28,7 @@ class ProductList extends React.Component {
         <Banner />
         <div className="product-list-container">
           <h2 className="product-list-title">
-            {isFiltered ? `Products in ${selectedCategory}` : 'Our Products'}
+            {isFiltered ? `Products in ${selectedCategory}` : 'New Arrivals View All'}
           </h2>
           {filteredProducts.length === 0 && selectedCategory ? (
             <p className="no-products-message">No products found in this category.</p>
