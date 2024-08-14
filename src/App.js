@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
@@ -7,40 +7,44 @@ import AddToCart from './components/AddToCart';
 import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const App = () => {
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const handleCategoryChange = (category) => {
-    setSelectedCategory(category);
+class App extends React.Component {
+  state = {
+    selectedCategory: '',
+    isSidebarOpen: false,
   };
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(prevState => !prevState);
+  handleCategoryChange = (category) => {
+    this.setState({ selectedCategory: category });
   };
 
-  return (
-    <Router>
-      <div className="App">
-        <Navbar 
-          onCategoryChange={handleCategoryChange} 
-          toggleSidebar={toggleSidebar}
-        />
-        <Sidebar 
-          onCategoryChange={handleCategoryChange} 
-          isOpen={isSidebarOpen}
-          toggleSidebar={toggleSidebar}
-        />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<ProductList selectedCategory={selectedCategory} />} />
-            <Route path="/sort" element={<ProductList selectedCategory={selectedCategory} />} />
-            <Route path="/cart" element={<AddToCart />} />
-          </Routes>
+  toggleSidebar = () => {
+    this.setState(prevState => ({ isSidebarOpen: !prevState.isSidebarOpen }));
+  };
+
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          <Navbar 
+            onCategoryChange={this.handleCategoryChange} 
+            toggleSidebar={this.toggleSidebar}
+          />
+          <Sidebar 
+            onCategoryChange={this.handleCategoryChange} 
+            isOpen={this.state.isSidebarOpen}
+            toggleSidebar={this.toggleSidebar}
+          />
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<ProductList selectedCategory={this.state.selectedCategory} />} />
+              <Route path="/sort" element={<ProductList selectedCategory={this.state.selectedCategory} />} />
+              <Route path="/cart" element={<AddToCart />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </Router>
-  );
-};
+      </Router>
+    );
+  }
+}
 
 export default App;
